@@ -1,0 +1,453 @@
+<html>
+
+<head>
+    <title>Xprin User Blog</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cerulean/bootstrap.min.css">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!--adrian-->
+    <link rel="stylesheet" href="css/style.css">
+    <!--adrian-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+</head>
+</head>
+
+<body>
+    <style>
+        #form {
+            width: 470px;
+            padding: 0 5px;
+            margin: 0 auto;
+        }
+
+        input[type=text],
+        select {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+
+        input[type=submit] {
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        div {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+        }
+
+        .mPriv {
+            background: white;
+            height: 200px;
+            width: 200px;
+            color: black;
+            box-shadow: 1px 1px 1px 1px gray;
+            overflow: auto;
+        }
+
+        .todoM {
+            height: 200px;
+
+            /*width:200px; */
+            box-shadow: 1px 1px 1px 1px gray;
+            overflow: auto;
+            background-color: white;
+            color: black;
+        }
+
+        .user {
+            height: 200px;
+            /*width:200px; */
+            box-shadow: 1px 1px 1px 1px gray;
+            overflow: auto;
+            background-color: white;
+
+        }
+
+        #mainPage,
+        #globalMess {
+            background-image: url("content/images/fondo.jpg");
+        }
+
+        .privMess {
+            background: white;
+            height: 200px;
+            width: 200px;
+            color: black;
+            box-shadow: 1px 1px 1px 1px gray;
+            overflow: auto;
+            float: left;
+
+        }
+    </style>
+
+
+    <div id="mainPage">
+        <div id="LogIn" class="a1" style="margin: 100 auto; ">
+            <div class="panel panel-header " align="center" style="background-color: #FF9900; ">
+                <h1 style="color: black">Chat-App</h1>
+                <div class="circular">
+                    <img src="https://s-media-cache-ak0.pinimg.com/236x/80/47/3a/80473a20c3b626694bbead0723dbec6c.jpg" alt="" />
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="panel panel-default" style="width: 350px; margin:0 auto;">
+                <!-- <div class="errormsg"></div> -->
+                <h4>Username:</h4>
+                <input type="text" class=" pull-right form-control box username" placeholder="username...">
+                <br>
+                <button class="fa fa btn btn-default btn-small glyphicon glyphicon-log-in" type="button"> OK</button>
+            </div>
+
+        </div>
+
+        <div id="globalMess" class="a2" style="display:none">
+            <div class="panel panel-header " align="center" style="background-color: white; opacity: 0.6; ">
+                <h1 style="color: black">Chat-App</h1>
+                <p class="logout">
+                    <a id="exit" href="" style="color:red">Exit Chat</a>
+                </p>
+            </div>
+            <div class="row " style="  margin: 0 auto; background-color: #FF9900; ">
+                <div class="allmsg todoM" align="center">
+
+                    <em align="center">Chat-Public</em>
+                    <br>
+                    <hr>
+                    <BUtton>
+                        <p align="center">
+                            <div style=" background-color: rgb(30, 174, 241);" width="100" height="100">
+                                <script type="text/javascript">
+                                    var d = new Date();
+                                    document.write(' Hora: ' + d.getHours(), +d.getMinutes(), );
+
+                                </script>
+                        </p>
+                    </BUtton>
+                    </div>
+                </div>
+
+                <div style="background-color: orange">
+
+
+                    <form id="msgForm" class="form-my">
+                        <div class="wrapper">
+                            <div class="row">
+
+                                <div class="usersnow user col-sm-3" style="float: right;" align="center">
+                                    <!--  To:<input type="text" class="to"> -->
+                                    <input type="text" title="Users Conected: ">
+                                    <br>
+                                    <hr>
+
+                                </div>
+
+
+                                <div style="width: 150px; float: left;" class=" privMessContainer col-sm-3"></div>
+
+                                <div style="float: right;" class="col-sm-5">
+                                    Message:
+                                    <input id="messageInput" type="text" class="msg_box" placeholder="message....">
+                                    <input style="width: 150px; float: left;" type="submit" value="Send to public">
+                                    <input style="float: left; width: 100px; height: 49px; margin-top: 9px; margin-left: 10px; " id="emoji" type="button" value="emoji"
+                                        title="Emoji" />
+                                    <input style="float: left; width: 100px; height: 49px; margin-top: 9px; margin-left: 10px; " class="btn1" value="zumbido"
+                                        onclick="beep();" type="button" />
+                                </div>
+
+
+
+                            </div>
+                            <!-- <div class="privmsg mPriv"></div> -->
+                            <div class="msg_ma_error"></div>
+
+                        </div>
+                        <div id="emojiWrapper"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+</body>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js"></script>
+
+<script type="text/javascript">
+                                        window.onload = function () {
+                                            var hichat = new HiChat();
+                                            hichat.init();
+                                        };
+                                        var HiChat = function () {
+                                            this.socket = null;
+                                        };
+                                        HiChat.prototype = {
+                                            init: function () {
+                                                var that = this;
+
+                                                this._initialEmoji();
+                                                document.getElementById('emoji').addEventListener('click', function (e) {
+                                                    var emojiwrapper = document.getElementById('emojiWrapper');
+                                                    emojiwrapper.style.display = 'block';
+                                                    e.stopPropagation();
+                                                }, false);
+                                                document.body.addEventListener('click', function (e) {
+                                                    var emojiwrapper = document.getElementById('emojiWrapper');
+                                                    if (e.target != emojiwrapper) {
+                                                        emojiwrapper.style.display = 'none';
+                                                    };
+                                                });
+                                                document.getElementById('emojiWrapper').addEventListener('click', function (e) {
+                                                    var target = e.target;
+                                                    if (target.nodeName.toLowerCase() == 'img') {
+                                                        var messageInput = document.getElementById('messageInput');
+                                                        messageInput.focus();
+                                                        messageInput.value = messageInput.value + '[emoji:' + target.title + ']';
+                                                    };
+                                                }, false);
+                                            },
+                                            _initialEmoji: function () {
+                                                var emojiContainer = document.getElementById('emojiWrapper'),
+                                                    docFragment = document.createDocumentFragment();
+                                                for (var i = 69; i > 0; i--) {
+                                                    var emojiItem = document.createElement('img');
+                                                    emojiItem.src = '../content/emoji/' + i + '.gif';
+                                                    emojiItem.title = i;
+                                                    docFragment.appendChild(emojiItem);
+                                                };
+                                                emojiContainer.appendChild(docFragment);
+                                            },
+                                            _displayNewMsg: function (user, msg, color) {
+                                                var container = document.getElementById('historyMsg'),
+                                                    msgToDisplay = document.createElement('p'),
+                                                    date = new Date().toTimeString().substr(0, 8),
+                                                    //determine whether the msg contains emoji
+                                                    msg = this._showEmoji(msg);
+                                                msgToDisplay.style.color = color || '#000';
+                                                msgToDisplay.innerHTML = user + '<span class="timespan">(' + date + '): </span>' + msg;
+                                                container.appendChild(msgToDisplay);
+                                                container.scrollTop = container.scrollHeight;
+                                            },
+                                            _displayImage: function (user, imgData, color) {
+                                                var container = document.getElementById('historyMsg'),
+                                                    msgToDisplay = document.createElement('p'),
+                                                    date = new Date().toTimeString().substr(0, 8);
+                                                msgToDisplay.style.color = color || '#000';
+                                                msgToDisplay.innerHTML = user + '<span class="timespan">(' + date + '): </span> <br/>' + '<a href="' + imgData + '" target="_blank"><img src="' + imgData + '"/></a>';
+                                                container.appendChild(msgToDisplay);
+                                                container.scrollTop = container.scrollHeight;
+                                            },
+                                            _showEmoji: function (msg) {
+                                                var match, result = msg,
+                                                    reg = /\[emoji:\d+\]/g,
+                                                    emojiIndex,
+                                                    totalEmojiNum = document.getElementById('emojiWrapper').children.length;
+                                                while (match = reg.exec(msg)) {
+                                                    emojiIndex = match[0].slice(7, -1);
+                                                    if (emojiIndex > totalEmojiNum) {
+                                                        result = result.replace(match[0], '[X]');
+                                                    } else {
+                                                        result = result.replace(match[0], '<img class="emoji" src="./content/emoji/' + emojiIndex + '.gif" />');//todo:fix this in chrome it will cause a new request for the image
+                                                    };
+                                                };
+                                                return result;
+                                            }
+                                        };
+
+</script>
+<script type="text/javascript">
+    var socket = io.connect('10.8.17.111:3000');
+    var userM = '';
+    var TexUserField = [];
+
+
+    $(document).on('click', '.removeButton', function () {
+        $(this).closest('.parentDiv').remove();
+    });
+
+    $('.btn').click(function () {
+        var txt = $('.box').val();
+        if ($.trim(txt) == '') {
+            $('.errormsg').text('Please Enter Username');
+        } else {
+            socket.emit('New_user', txt, function (data) {
+                if (data) {
+                    $('.a1').hide();
+                    $('.a2').show();
+                } else {
+                    $('.errormsg').text('Sorry User Already Exists;');
+                }
+            });
+            $('.box').val('');
+        }
+    });
+
+    socket.on('all_users', function (data) {
+        $('.usersnow').html(data);
+    });
+
+    socket.on('snd_mg', function (data) {
+        $('.allmsg').append(data + '<br>');
+    });
+
+    socket.on('call', function (data, userId) {
+        console.log("Nombre del usuario: " + userId);
+
+        if ($('#T' + userId).length == 0) {
+
+            TexUserField[TexUserField.length] = '<div class="parentDiv"> <div id="T' + userId + '" class="privmsg privMess" data-arrnumber="' + TexUserField.length + '"><div style="color : white; width: 180px; height: 20px; background-color: gray; text-align: center;">' + userId + '<button class="removeButton pull-right" style="width:25px; color:black;">X </button></div></div><br></div>';
+
+            if (TexUserField.length > 1) {
+                $('.privMessContainer')
+                    .append(TexUserField[TexUserField.length - 1]);
+            } else {
+                $('.privMessContainer')
+                    .html(TexUserField[0]);
+            }
+
+            $('#T' + userId).append(data + '<br>');
+
+        } else {
+            $('#T' + userId).append(data + '<br>');
+        }
+    });
+
+
+    socket.on('eva', function (data) {
+        $('.msg_ma_error').html(data + '<br>');
+    });
+
+
+    $('.form-my').submit(function (e) {
+        e.preventDefault();
+        var msg = $('.msg_box').val(),
+            to = '';
+
+        if ($.trim(to) === '') {
+            to = $.trim(userM);
+        }
+
+        var msg1 = msg + '$' + to;
+        if ($.trim(msg) !== '' || $.trim(to) !== '') {
+
+            var mensaje = $(".msg_box").val();
+            var nick = $(".username").val();
+            var pm = $.trim(to) !== '';
+            var para = $.trim(to);
+
+            /*  $.post('http://localhost:3000/api/mensaje', {
+          "nick": nick,
+          "mensaje": mensaje,
+          "pm": pm,
+          "para": para
+        }, function(serverResponse){
+          //alert(serverResponse);
+        //do what you want with server response
+  
+        });*/
+            function beep() {
+                (new
+                    Audio(
+                    "data:audio/wav;base64,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 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////VEFHAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAU291bmRib3kuZGUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAMjAwNGh0dHA6Ly93d3cuc291bmRib3kuZGUAAAAAAAAAACU="
+                    )).play();
+            }
+            /////////
+            $('.btn1').submit(function (z) {
+
+                z.preventDefault();
+                to = $('.to').val(),
+                    zmb = zm + 'to';
+                Socket.emit('msg_z', zmb,
+                    function (data) {
+                        $('.msg_ma_error').html(data);
+
+                    })
+            });
+
+
+
+
+
+
+
+
+
+            socket.emit('msg_k', msg1, function (data) {
+                $('.msg_ma_error').html(data);
+            });
+
+            event = false;
+            socket.emit('stop_ray', event);
+
+            $('.msg_box').val('');
+            $('.to').val('');
+            userM = '';
+        }
+    })
+
+
+
+    function msgUser(usero) {
+        userM = usero;
+        document.getElementById("msgForm").submit;
+    }
+
+    function deleteWindowTextuser(deleteTA, arrNum) {
+
+        var htmlTextUser = '';
+
+        TexUserField[deleteTA - 1] = '';
+        $('.privMessContainer').html('');
+        for (var i = 0; i <= TexUserField.length - 1; i++) {
+            htmlTextUser = htmlTextUser + TexUserField[i];
+        }
+        $('#T' + arrNum).remove();
+    }
+
+
+    var timeout;
+    var event;
+
+
+
+    $('.msg_box').keyup(function () {
+        var val = $(this).val();
+        if (val.length >= 0.5) {
+            event = true;
+            socket.emit('typing_ray', event);
+        } else {
+            event = false;
+            socket.emit('stop_ray', event);
+        }
+
+
+    });
+
+
+
+</script>
+
+
+</html>
